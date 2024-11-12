@@ -4,20 +4,18 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    text-align: center;  /* Center everything by default */
 }
 
 /* Header and Centering Text */
 header {
-    text-align: center;  /* Centers all text inside header */
     margin-top: 20px;
 }
 
 h1 {
-    margin: 0;  /* Remove any default margin for the title */
-}
-
-header p {
-    margin-top: 10px;  /* Add some space above the paragraph */
+    margin: 0;
+    font-size: 2.5em;  /* Make heading a bit larger */
+    text-align: center;  /* Center the "Item Database" text */
 }
 
 /* Navigation Styles */
@@ -87,9 +85,9 @@ select {
     margin-right: auto;
 }
 
-/* Center the "Select an Item Category" text above the dropdown */
+/* Container for Item Category Label and Dropdown */
 .item-select-container {
-    text-align: center;  /* Center the text above the dropdown */
+    text-align: center;  /* Center the text inside the container */
     margin-top: 20px;    /* Add spacing above the container */
 }
 
@@ -98,7 +96,7 @@ select {
     margin-bottom: 10px; /* Space between label and dropdown */
 }
 
-/* Center the "Click a link below" text on the homepage */
+/* Additional global centering for text */
 header p {
     text-align: center;
 }
