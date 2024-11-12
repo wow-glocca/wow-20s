@@ -1,15 +1,102 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Glocca's WoW 20s Guides</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guild Item Database</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="main"
-        <div class="navbar">
-            <div class="icon">
-                <h2 class="logo">Glocca's World of Warcraft Twink Resource Center</h2>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#database">Item Database</a></li>
+                <li><a href="#armories">Armories</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to the Guild Item Database</h1>
+        <p>Your go-to resource for rare items and complete gear sets.</p>
+    </header>
+
+    <section id="featured-items">
+        <h2>Featured Items</h2>
+        <div class="item-grid">
+            <div class="item">
+                <h3>Item Name 1</h3>
+                <p>Location: Dungeon X</p>
+                <p>Attributes: +10 Strength, +5 Agility</p>
             </div>
+            <div class="item">
+                <h3>Item Name 2</h3>
+                <p>Location: Raid Y</p>
+                <p>Attributes: +15 Stamina, +20 Defense</p>
+            </div>
+            <!-- Add more items as needed -->
         </div>
-    </div>
-      
-   </body>
+    </section>
+
+    <section id="announcements">
+        <h2>Guild Announcements</h2>
+        <p>No new announcements at this time. Stay tuned for updates!</p>
+    </section>
+
+    <section id="gear-planner">
+        <h2>Gear Planner</h2>
+        <form id="selection-form">
+            <label for="race">Select Race:</label>
+            <select id="race" name="race">
+                <option value="human">Human</option>
+                <option value="orc">Orc</option>
+                <option value="night-elf">Night Elf</option>
+                <!-- Add more races as needed -->
+            </select>
+
+            <label for="class">Select Class:</label>
+            <select id="class" name="class">
+                <option value="warrior">Warrior</option>
+                <option value="mage">Mage</option>
+                <option value="hunter">Hunter</option>
+                <!-- Add more classes as needed -->
+            </select>
+        </form>
+
+        <section id="item-selection">
+            <h3>Select Your Gear</h3>
+            <div id="item-pool">
+                <div class="item" data-name="Sword of Valor" data-strength="15" data-agility="5">
+                    <h4>Sword of Valor</h4>
+                    <p>+15 Strength, +5 Agility</p>
+                    <button class="add-item">Add to Gear</button>
+                </div>
+                <div class="item" data-name="Mystic Robe" data-intelligence="20" data-stamina="10">
+                    <h4>Mystic Robe</h4>
+                    <p>+20 Intelligence, +10 Stamina</p>
+                    <button class="add-item">Add to Gear</button>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </section>
+
+        <section id="selected-gear">
+            <h3>Selected Gear</h3>
+            <ul id="gear-list">
+                <!-- Dynamically populated items -->
+            </ul>
+            <div id="total-stats">
+                <h4>Total Stats</h4>
+                <p>Strength: <span id="total-strength">0</span></p>
+                <p>Agility: <span id="total-agility">0</span></p>
+                <p>Intelligence: <span id="total-intelligence">0</span></p>
+                <p>Stamina: <span id="total-stamina">0</span></p>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Guild Name. All rights reserved.</p>
+    </footer>
+</body>
 </html>
