@@ -87,10 +87,15 @@ select {
     margin-right: auto;
 }
 
-/* Additional text adjustments for centered dropdown label */
-select:before {
-    content: "Select a category";
-    text-align: center;
+/* Center the "Select an Item Category" text above the dropdown */
+.item-select-container {
+    text-align: center;  /* Center the text above the dropdown */
+    margin-top: 20px;    /* Add spacing above the container */
+}
+
+.item-select-container label {
+    font-size: 18px;     /* Adjust the font size if needed */
+    margin-bottom: 10px; /* Space between label and dropdown */
 }
 
 /* Center the "Click a link below" text on the homepage */
