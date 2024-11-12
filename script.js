@@ -4,24 +4,25 @@ window.onload = function() {
 
 
 
-// Function to show and hide item sections based on dropdown selection
-function showCategory(category) {
-    // Hide all item sections
-    const sections = document.querySelectorAll('.item-section');
-    sections.forEach(section => {
+// Get the dropdown and all item sections
+const categorySelect = document.getElementById('category-select');
+const itemSections = document.querySelectorAll('.item-section');
+
+// Function to display the selected category's section
+function showSelectedCategory() {
+    const selectedCategory = categorySelect.value;
+
+    // Hide all item sections first
+    itemSections.forEach(section => {
         section.style.display = 'none';
     });
 
-    // Show the selected category if it's not empty
-    if (category) {
-        const selectedCategory = document.getElementById(category);
-        if (selectedCategory) {
-            selectedCategory.style.display = 'block';
-        }
+    // Show the selected category's section
+    const selectedSection = document.getElementById(selectedCategory + '-section');
+    if (selectedSection) {
+        selectedSection.style.display = 'block';
     }
 }
 
-// Optionally, show a default category on page load
-window.onload = function() {
-    showCategory('plate');  // Show 'Plate' items by default
-};
+// Add event listener for when the user selects a category
+categorySelect.addEventListener('change', showSelectedCategory);
