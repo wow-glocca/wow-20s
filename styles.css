@@ -1,44 +1,25 @@
-/* General Body Styling */
+/* Global Styles */
 body {
-    background-color: #f4f4f4;  /* Light gray background */
-    font-family: 'Arial', sans-serif;  /* Sans-serif font for readability */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f4f4f4;
 }
 
-/* Header Styling */
-header {
-    background-color: #4CAF50;  /* Green background for header */
-    color: white;
+h1 {
     text-align: center;
-    padding: 40px;
-    margin-bottom: 20px;
-    border-bottom: 5px solid #333;  /* Dark border beneath header */
+    margin-top: 20px;
 }
 
-header h1 {
-    font-size: 36px;  /* Larger font size for the title */
-    margin: 0;
-}
-
-header p {
-    font-size: 18px;  /* Smaller font size for subtitle */
-    font-weight: lighter;
-    margin-top: 10px;
-}
-
-/* Navigation Bar Styling */
 nav {
-    background-color: #333;  /* Dark background for the navigation bar */
+    background-color: #333;
     padding: 10px;
-    text-align: center;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -50,33 +31,48 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 5px; /* Rounded corners for links */
 }
 
 nav ul li a:hover {
-    background-color: #555;  /* Highlight on hover */
+    text-decoration: underline;
 }
 
-/* Footer Styling */
-footer {
-    background-color: #333;
-    color: white;
+/* Item Database Styles */
+.item-section {
+    display: none;  /* Hide all sections by default */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-section h2 {
+    color: #333;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
+.item-section ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-    header h1 {
-        font-size: 28px;
-    }
+.item-section ul li {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+/* Dropdown Menu Styles */
+select {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

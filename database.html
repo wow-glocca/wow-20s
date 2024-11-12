@@ -19,79 +19,72 @@
     <!-- Dropdown Menu for Section Navigation -->
     <div>
         <label for="item-section">Select an Item Category:</label>
-        <select id="item-section" onchange="window.location = this.value;">
-            <option value="#">-- Choose a Category --</option>
-            <option value="#plate">Plate</option>
-            <option value="#mail">Mail</option>
-            <option value="#leather">Leather</option>
-            <option value="#cloth">Cloth</option>
-            <option value="#jewelry">Jewelry</option>
-            <option value="#trinkets">Trinkets</option>
-            <option value="#weapons">Weapons</option>
+        <select id="item-section" onchange="showCategory(this.value)">
+            <option value="">-- Choose a Category --</option>
+            <option value="plate">Plate</option>
+            <option value="mail">Mail</option>
+            <option value="leather">Leather</option>
+            <option value="cloth">Cloth</option>
+            <option value="jewelry">Jewelry</option>
+            <option value="trinkets">Trinkets</option>
+            <option value="weapons">Weapons</option>
         </select>
     </div>
 
-    <!-- Section Content -->
-    <div id="plate">
+    <!-- Section Content (Initially Hidden) -->
+    <div id="plate" class="item-section">
         <h2>Plate Items</h2>
         <ul>
             <li>Plate Item 1</li>
             <li>Plate Item 2</li>
-            <!-- More items can be added here -->
         </ul>
     </div>
 
-    <div id="mail">
+    <div id="mail" class="item-section">
         <h2>Mail Items</h2>
         <ul>
             <li>Mail Item 1</li>
             <li>Mail Item 2</li>
-            <!-- More items can be added here -->
         </ul>
     </div>
 
-    <div id="leather">
+    <div id="leather" class="item-section">
         <h2>Leather Items</h2>
         <ul>
             <li>Leather Item 1</li>
             <li>Leather Item 2</li>
-            <!-- More items can be added here -->
         </ul>
     </div>
 
-    <div id="cloth">
+    <div id="cloth" class="item-section">
         <h2>Cloth Items</h2>
         <ul>
             <li>Cloth Item 1</li>
             <li>Cloth Item 2</li>
-            <!-- More items can be added here -->
         </ul>
     </div>
 
-    <div id="jewelry">
+    <div id="jewelry" class="item-section">
         <h2>Jewelry Items</h2>
         <ul>
             <li>Jewelry Item 1</li>
             <li>Jewelry Item 2</li>
-            <!-- More items can be added here -->
         </ul>
     </div>
 
-    <div id="trinkets">
+    <div id="trinkets" class="item-section">
         <h2>Trinkets</h2>
         <ul>
             <li>Trinket 1</li>
             <li>Trinket 2</li>
-            <!-- More items can be added here -->
         </ul>
     </div>
 
-    <div id="weapons">
+    <div id="weapons" class="item-section">
         <h2>Weapons</h2>
         <ul>
             <li>Weapon 1</li>
             <li>Weapon 2</li>
-            <!-- More items can be added here -->
         </ul>
     </div>
 
