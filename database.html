@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,124 +9,68 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index">Return Home</a></li>
-            <li><a href="armories">Armories</a></li>
+            <li><a href="index.html">Return Home</a></li>
+            <li><a href="armories.html">Armories</a></li>
         </ul>
     </nav>
 
     <header>
         <h1>Item Database</h1>
-        <p>Choose a category to explore items!</p>
+        <p>Select an armor type to view available slots and items.</p>
     </header>
 
-<div class="selection-container">
-    <label for="armor-type">Select Armor Type or Item Type:</label>
-    <select id="armor-type" onchange="showSlots(this.value)">
-        <option value="">--Select--</option>
-        <option value="cloth">Cloth</option>
-        <option value="leather">Leather</option>
-        <option value="mail">Mail</option>
-        <option value="plate">Plate</option>
-        <!-- Non-multi-level options -->
-        <option value="cloak">Cloaks</option>
-        <option value="neck">Necks</option>
-        <option value="ring">Rings</option>
-        <option value="trinket">Trinkets</option>
-        <option value="2hmweapon">2H Melee Weapons</option>
-        <option value="1hmweapon">1H Melee Weapons</option>
-        <option value="2hcweapon">2H Caster Weapons</option>
-        <option value="1hcweapon">1H Caster Weapons</option>
-        <option value="ohweapon">OH</option>
-    </select>
-</div>
+    <!-- Armor Type Selection -->
+    <div class="selection-container">
+        <label for="armor-type">Select Armor Type:</label>
+        <select id="armor-type" onchange="showSlots(this.value)">
+            <option value="">--Select--</option>
+            <option value="cloth">Cloth</option>
+            <option value="leather">Leather</option>
+            <option value="mail">Mail</option>
+            <option value="plate">Plate</option>
+            <!-- Non-multi-level options -->
+            <option value="cloak">Cloaks</option>
+            <option value="neck">Necks</option>
+            <option value="ring">Rings</option>
+            <option value="trinket">Trinkets</option>
+            <option value="2hmweapon">2H Melee Weapons</option>
+            <option value="1hmweapon">1H Melee Weapons</option>
+            <option value="2hcweapon">2H Caster Weapons</option>
+            <option value="1hcweapon">1H Caster Weapons</option>
+            <option value="ohweapon">OH</option>
+        </select>
+    </div>
 
-<!-- Sections for armor types -->
-<div id="cloth-section" class="slot-section">
-    <h2>Cloth Armor</h2>
-    <h3>Helmet</h3>
-    <ul>
-        <li><a href="#">Cloth Helmet 1</a> - Additional info</li>
-        <li><a href="#">Cloth Helmet 2</a> - Additional info</li>
-    </ul>
-    <h3>Shoulders</h3>
-    <ul>
-        <li><a href="#">Cloth Shoulders 1</a> - Additional info</li>
-        <li><a href="#">Cloth Shoulders 2</a> - Additional info</li>
-    </ul>
-    <!-- Other armor slots... -->
-</div>
-<div id="leather-section" class="slot-section">
-    <h2>Leather Armor</h2>
-    <h3>Helmet</h3>
-    <ul>
-        <li><a href="#">Leather Helmet 1</a> - Additional info</li>
-        <li><a href="#">Leather Helmet 2</a> - Additional info</li>
-    </ul>
-    <!-- Other armor slots... -->
-</div>
-<!-- Other armor sections (mail, plate)... -->
+    <!-- Armor Type Sections (hidden by default) -->
+    <div id="cloth-section" class="slot-section">
+        <h2>Cloth Armor</h2>
+        <ul>
+            <li><a href="#">Cloth Helmet 1</a> - Additional info</li>
+            <li><a href="#">Cloth Helmet 2</a> - Additional info</li>
+        </ul>
+    </div>
 
-<!-- Sections for non-armor items -->
-<div id="cloak-section" class="slot-section">
-    <h2>Cloaks</h2>
-    <ul>
-        <li><a href="#">Cloak of Shadows</a> - Adds stealth</li>
-        <li><a href="#">Cloak of the Moon</a> - Increases mana regeneration</li>
-    </ul>
-</div>
-<div id="neck-section" class="slot-section">
-    <h2>Necks</h2>
-    <ul>
-        <li><a href="#">Necklace of Power</a> - Increases strength</li>
-        <li><a href="#">Amulet of Healing</a> - Increases healing done</li>
-    </ul>
-</div>
-<div id="ring-section" class="slot-section">
-    <h2>Rings</h2>
-    <ul>
-        <li><a href="#">Ring of Fire</a> - Adds fire damage</li>
-        <li><a href="#">Ring of Ice</a> - Adds frost resistance</li>
-    </ul>
-</div>
-<div id="trinket-section" class="slot-section">
-    <h2>Trinkets</h2>
-    <ul>
-        <li><a href="#">Trinket of Speed</a> - Increases movement speed</li>
-        <li><a href="#">Trinket of Might</a> - Boosts physical damage</li>
-    </ul>
-</div>
-<div id="2hmweapon-section" class="slot-section">
-    <h2>2H Melee Weapons</h2>
-    <ul>
-        <li><a href="#">Two-Handed Sword of the Ancients</a> - Massive damage</li>
-        <li><a href="#">Great Axe of Fury</a> - Increases attack speed</li>
-    </ul>
-</div>
-<div id="1hmweapon-section" class="slot-section">
-    <h2>1H Melee Weapons</h2>
-    <ul>
-        <li><a href="#">Short Sword of Precision</a> - Increased critical hit chance</li>
-        <li><a href="#">One-Handed Mace of Power</a> - Boosts strength</li>
-    </ul>
-</div>
-<div id="2hcweapon-section" class="slot-section">
-    <h2>2H Caster Weapons</h2>
-    <ul>
-        <li><a href="#">Staff of Wisdom</a> - Boosts intellect</li>
-        <li><a href="#">Wand of the Magi</a> - Increases spell power</li>
-    </ul>
-</div>
-<div id="1hcweapon-section" class="slot-section">
-    <h2>1H Caster Weapons</h2>
-    <ul>
-        <li><a href="#">Wand of the Wise</a> - Increases spell haste</li>
-        <li><a href="#">Dagger of the Elements</a> - Boosts elemental damage</li>
-    </ul>
-</div>
-<div id="ohweapon-section" class="slot-section">
-    <h2>Off-hand Weapons</h2>
-    <ul>
-        <li><a href="#">Off-Hand Tome of Knowledge</a> - Increases mana regeneration</li>
-        <li><a href="#">Off-Hand Shield of Protection</a> - Increases defense</li>
-    </ul>
-</div>
+    <!-- Add similar sections for Leather, Mail, and Plate... -->
+
+    <!-- Non-Armor Sections (hidden by default) -->
+    <div id="cloak-section" class="slot-section">
+        <h2>Cloaks</h2>
+        <ul>
+            <li><a href="#">Cloak of Shadows</a> - Adds stealth</li>
+            <li><a href="#">Cloak of the Moon</a> - Increases mana regeneration</li>
+        </ul>
+    </div>
+
+    <div id="neck-section" class="slot-section">
+        <h2>Necks</h2>
+        <ul>
+            <li><a href="#">Necklace of Power</a> - Increases strength</li>
+            <li><a href="#">Amulet of Healing</a> - Increases healing done</li>
+        </ul>
+    </div>
+
+    <!-- Other sections for Rings, Trinkets, Weapons, etc. -->
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -173,10 +173,6 @@ ul li a:hover {
         margin-top: 10px;
     }
 
-    .dropdown-content {
-        min-width: 120px;
-    }
-
     select {
         max-width: 100%;
     }
