@@ -9,14 +9,14 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Return Home</a></li>
-            <li><a href="armories.html">Armories</a></li>
+            <li><a href="index">Return Home</a></li>
+            <li><a href="armories">Armories</a></li>
         </ul>
     </nav>
 
     <header>
         <h1>Item Database</h1>
-        <p>Select a category to view the listed items.</p>
+        <p>Select a category to view items.</p>
     </header>
 
     <!-- Armor Type Selection -->
@@ -25,89 +25,93 @@
             <button class="dropbtn">Armor</button>
             <div class="dropdown-content">
                 <div class="dropdown-submenu">
-                    <a href="#">Cloth</a>
-                    <div class="dropdown-content">
-                        <!-- Items for Cloth -->
-                        <a href="#">Cloth Item 1</a>
-                        <a href="#">Cloth Item 2</a>
-                        <a href="#">Cloth Item 3</a>
+                    <a href="#" class="submenu-item">Cloth</a>
+                    <div class="item-list">
+                        <div class="dropdown">
+                            <button class="dropbtn">Select Slot</button>
+                            <div class="dropdown-content">
+                                <a href="#">Cloth Helmet</a>
+                                <a href="#">Cloth Shoulders</a>
+                                <a href="#">Cloth Chest</a>
+                                <a href="#">Cloth Legs</a>
+                                <a href="#">Cloth Boots</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="dropdown-submenu">
-                    <a href="#">Leather</a>
-                    <div class="dropdown-content">
-                        <!-- Items for Leather -->
-                        <a href="#">Leather Item 1</a>
-                        <a href="#">Leather Item 2</a>
-                        <a href="#">Leather Item 3</a>
+                    <a href="#" class="submenu-item">Leather</a>
+                    <div class="item-list">
+                        <div class="dropdown">
+                            <button class="dropbtn">Select Slot</button>
+                            <div class="dropdown-content">
+                                <a href="#">Leather Helmet</a>
+                                <a href="#">Leather Shoulders</a>
+                                <a href="#">Leather Chest</a>
+                                <a href="#">Leather Legs</a>
+                                <a href="#">Leather Boots</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="dropdown-submenu">
-                    <a href="#">Mail</a>
-                    <div class="dropdown-content">
-                        <!-- Items for Mail -->
-                        <a href="#">Mail Item 1</a>
-                        <a href="#">Mail Item 2</a>
-                        <a href="#">Mail Item 3</a>
+                    <a href="#" class="submenu-item">Mail</a>
+                    <div class="item-list">
+                        <div class="dropdown">
+                            <button class="dropbtn">Select Slot</button>
+                            <div class="dropdown-content">
+                                <a href="#">Mail Helmet</a>
+                                <a href="#">Mail Shoulders</a>
+                                <a href="#">Mail Chest</a>
+                                <a href="#">Mail Legs</a>
+                                <a href="#">Mail Boots</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="dropdown-submenu">
-                    <a href="#">Plate</a>
-                    <div class="dropdown-content">
-                        <!-- Items for Plate -->
-                        <a href="#">Plate Item 1</a>
-                        <a href="#">Plate Item 2</a>
-                        <a href="#">Plate Item 3</a>
+                    <a href="#" class="submenu-item">Plate</a>
+                    <div class="item-list">
+                        <div class="dropdown">
+                            <button class="dropbtn">Select Slot</button>
+                            <div class="dropdown-content">
+                                <a href="#">Plate Helmet</a>
+                                <a href="#">Plate Shoulders</a>
+                                <a href="#">Plate Chest</a>
+                                <a href="#">Plate Legs</a>
+                                <a href="#">Plate Boots</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="dropdown-submenu">
-                    <a href="#">Weapons</a>
-                    <div class="dropdown-content">
-                        <!-- Items for Weapons -->
+                    <a href="#" class="submenu-item">Weapons</a>
+                    <div class="item-list">
+                        <!-- Items for Weapons (this can remain a simpler dropdown) -->
                         <a href="#">2H Melee Weapons</a>
                         <a href="#">1H Melee Weapons</a>
                         <a href="#">2H Caster Weapons</a>
                         <a href="#">1H Caster Weapons</a>
-                        <div class="dropdown">
-                            <button class="dropbtn">Off-Pieces</button>
-                            <div class="dropdown-content">
-                                <a href="#">Cloaks</a>
-                                <a href="#">Necks</a>
-                                <a href="#">Rings</a>
-                                <a href="#">Trinkets</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Other sections for Rings, Trinkets, Weapons, etc. -->
-
     <script src="script.js"></script>
     <script>
-        // Open and close main dropdown on hover
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            dropdown.addEventListener('mouseover', function () {
-                const dropdownContent = dropdown.querySelector('.dropdown-content');
-                if (dropdownContent) dropdownContent.style.display = 'block';
-            });
-            dropdown.addEventListener('mouseout', function () {
-                const dropdownContent = dropdown.querySelector('.dropdown-content');
-                if (dropdownContent) dropdownContent.style.display = 'none';
-            });
-        });
-    
-        // Open and close submenus in multi-level dropdown on hover
-        document.querySelectorAll('.dropdown-submenu').forEach(submenu => {
-            submenu.addEventListener('mouseover', function () {
-                const submenuContent = submenu.querySelector('.dropdown-content');
-                if (submenuContent) submenuContent.style.display = 'block';
-            });
-            submenu.addEventListener('mouseout', function () {
-                const submenuContent = submenu.querySelector('.dropdown-content');
-                if (submenuContent) submenuContent.style.display = 'none';
+        // Handle the toggle of item list visibility when a category is clicked
+        document.querySelectorAll('.submenu-item').forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+                const itemList = item.nextElementSibling; // Get the next element (the list)
+                
+                // Toggle the visibility of the list
+                if (itemList.style.display === 'block') {
+                    itemList.style.display = 'none';
+                } else {
+                    itemList.style.display = 'block';
+                }
             });
         });
     </script>
