@@ -16,61 +16,101 @@
 
     <header>
         <h1>Item Database</h1>
-        <p>Select an armor type to view available slots and items.</p>
+        <p>Select a category to view the listed items.</p>
     </header>
 
     <!-- Armor Type Selection -->
-    <div class="selection-container">
-        <label for="armor-type">Select Armor Type:</label>
-        <select id="armor-type" onchange="showSlots(this.value)">
-            <option value="">--Select--</option>
-            <option value="cloth">Cloth</option>
-            <option value="leather">Leather</option>
-            <option value="mail">Mail</option>
-            <option value="plate">Plate</option>
-            <!-- Non-multi-level options -->
-            <option value="cloak">Cloaks</option>
-            <option value="neck">Necks</option>
-            <option value="ring">Rings</option>
-            <option value="trinket">Trinkets</option>
-            <option value="2hmweapon">2H Melee Weapons</option>
-            <option value="1hmweapon">1H Melee Weapons</option>
-            <option value="2hcweapon">2H Caster Weapons</option>
-            <option value="1hcweapon">1H Caster Weapons</option>
-            <option value="ohweapon">OH</option>
-        </select>
-    </div>
+    <div class="item-select-container">
+        <div class="dropdown">
+            <button class="dropbtn">Armor Types</button>
+            <div class="dropdown-content">
+                <a href="#">Cloaks</a>
+                <a href="#">Necks</a>
+                <a href="#">Rings</a>
+                <a href="#">Trinkets</a>
+            </div>
+        </div>
 
-    <!-- Armor Type Sections (hidden by default) -->
-    <div id="cloth-section" class="slot-section">
-        <h2>Cloth Armor</h2>
-        <ul>
-            <li><a href="#">Cloth Helmet 1</a> - Additional info</li>
-            <li><a href="#">Cloth Helmet 2</a> - Additional info</li>
-        </ul>
-    </div>
-
-    <!-- Add similar sections for Leather, Mail, and Plate... -->
-
-    <!-- Non-Armor Sections (hidden by default) -->
-    <div id="cloak-section" class="slot-section">
-        <h2>Cloaks</h2>
-        <ul>
-            <li><a href="#">Cloak of Shadows</a> - Adds stealth</li>
-            <li><a href="#">Cloak of the Moon</a> - Increases mana regeneration</li>
-        </ul>
-    </div>
-
-    <div id="neck-section" class="slot-section">
-        <h2>Necks</h2>
-        <ul>
-            <li><a href="#">Necklace of Power</a> - Increases strength</li>
-            <li><a href="#">Amulet of Healing</a> - Increases healing done</li>
-        </ul>
+        <div class="dropdown">
+            <button class="dropbtn">Armor Types (Multi-Level)</button>
+            <div class="dropdown-content">
+                <div class="dropdown-submenu">
+                    <a href="#">Cloth</a>
+                    <div class="dropdown-content">
+                        <!-- Items for Cloth -->
+                        <a href="#">Cloth Item 1</a>
+                        <a href="#">Cloth Item 2</a>
+                        <a href="#">Cloth Item 3</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Leather</a>
+                    <div class="dropdown-content">
+                        <!-- Items for Leather -->
+                        <a href="#">Leather Item 1</a>
+                        <a href="#">Leather Item 2</a>
+                        <a href="#">Leather Item 3</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Mail</a>
+                    <div class="dropdown-content">
+                        <!-- Items for Mail -->
+                        <a href="#">Mail Item 1</a>
+                        <a href="#">Mail Item 2</a>
+                        <a href="#">Mail Item 3</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Plate</a>
+                    <div class="dropdown-content">
+                        <!-- Items for Plate -->
+                        <a href="#">Plate Item 1</a>
+                        <a href="#">Plate Item 2</a>
+                        <a href="#">Plate Item 3</a>
+                    </div>
+                </div>
+                <div class="dropdown-submenu">
+                    <a href="#">Weapons</a>
+                    <div class="dropdown-content">
+                        <!-- Items for Weapons -->
+                        <a href="#">2H Melee Weapons</a>
+                        <a href="#">1H Melee Weapons</a>
+                        <a href="#">2H Caster Weapons</a>
+                        <a href="#">1H Caster Weapons</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Other sections for Rings, Trinkets, Weapons, etc. -->
 
     <script src="script.js"></script>
+    <script>
+        // Open and close main dropdown on hover
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('mouseover', function () {
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+                if (dropdownContent) dropdownContent.style.display = 'block';
+            });
+            dropdown.addEventListener('mouseout', function () {
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+                if (dropdownContent) dropdownContent.style.display = 'none';
+            });
+        });
+    
+        // Open and close submenus in multi-level dropdown on hover
+        document.querySelectorAll('.dropdown-submenu').forEach(submenu => {
+            submenu.addEventListener('mouseover', function () {
+                const submenuContent = submenu.querySelector('.dropdown-content');
+                if (submenuContent) submenuContent.style.display = 'block';
+            });
+            submenu.addEventListener('mouseout', function () {
+                const submenuContent = submenu.querySelector('.dropdown-content');
+                if (submenuContent) submenuContent.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
