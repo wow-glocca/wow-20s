@@ -73,63 +73,38 @@ nav ul li a:hover {
     font-size: 16px;
 }
 
-/* Dropdown Menu Styles */
-select {
+/* Dropdown Styles */
+.item-select-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Dropdown button */
+.dropbtn {
     padding: 10px;
     font-size: 16px;
-    margin-top: 20px;
-    width: 100%;
-    max-width: 300px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
 }
 
-/* Container for Item Category Label and Dropdown */
-.item-select-container {
-    text-align: center;  /* Center the text inside the container */
-    margin-top: 20px;    /* Add spacing above the container */
-}
-
-.item-select-container label {
-    font-size: 18px;     /* Adjust the font size if needed */
-    margin-bottom: 10px; /* Space between label and dropdown */
-}
-
-/* Dropdown Menu Styles */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
+/* Dropdown menu */
 .dropdown-content {
-    display: none;
+    display: none;  /* Initially hide dropdown content */
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    text-align: left;
 }
 
-.dropdown-submenu {
-    position: relative;
-}
-
-.dropdown-submenu .dropdown-content {
-    top: 0;
-    left: 100%;  /* Position the nested dropdown to the right */
-    display: none; /* Hidden by default */
-}
-
+/* Show dropdown content when the button is hovered */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown-submenu:hover .dropdown-content {
-    display: block; /* Show submenu on hover */
-}
-
+/* Styling for items in dropdown */
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -137,19 +112,25 @@ select {
     display: block;
 }
 
-/* Change color on hover */
+/* Hover effect for items */
 .dropdown-content a:hover {
     background-color: #f1f1f1;
 }
 
-/* Specific styles for multi-level dropdown */
-.dropdown-submenu > a {
-    padding-right: 25px; /* Indent the submenu items */
+/* Submenu handling (Hides initially) */
+.item-list {
+    display: none;  /* Hide the item list by default */
+    padding: 10px;
 }
 
-/* Change color on hover */
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+/* Styling for submenus */
+.dropdown-submenu {
+    position: relative;
+}
+
+/* Show the submenu when hovering */
+.dropdown-submenu:hover .item-list {
+    display: block;
 }
 
 /* Slot Section Styles */
