@@ -4,25 +4,25 @@ window.onload = function() {
 
 
 
-// Get the dropdown and all item sections
-const categorySelect = document.getElementById('category-select');
-const itemSections = document.querySelectorAll('.item-section');
+function showSlots(selectedType) {
+    // Hide all sections initially
+    const allSections = document.querySelectorAll('.slot-section');
+    allSections.forEach(section => section.style.display = 'none');
 
-// Function to display the selected category's section
-function showSelectedCategory() {
-    const selectedCategory = categorySelect.value;
+    // Show the relevant section based on the selected value
+    if (selectedType === "") {
+        return;  // Do nothing if no option is selected
+    }
 
-    // Hide all item sections first
-    itemSections.forEach(section => {
-        section.style.display = 'none';
-    });
+    // Armor Types (Cloth, Leather, etc.)
+    const armorTypes = ['cloth', 'leather', 'mail', 'plate'];
+    if (armorTypes.includes(selectedType)) {
+        document.getElementById(selectedType + "-section").style.display = "block";
+    }
 
-    // Show the selected category's section
-    const selectedSection = document.getElementById(selectedCategory + '-section');
-    if (selectedSection) {
-        selectedSection.style.display = 'block';
+    // Non-multi-level items (Cloaks, Necks, Rings, etc.)
+    const nonArmorTypes = ['cloak', 'neck', 'ring', 'trinket', '2hmweapon', '1hmweapon', '2hcweapon', '1hcweapon', 'ohweapon'];
+    if (nonArmorTypes.includes(selectedType)) {
+        document.getElementById(selectedType + "-section").style.display = "block";
     }
 }
-
-// Add event listener for when the user selects a category
-categorySelect.addEventListener('change', showSelectedCategory);

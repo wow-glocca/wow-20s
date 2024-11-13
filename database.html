@@ -1,118 +1,74 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item Database</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .slot-section {
-            display: none;
-        }
-        /* Styling for the dropdowns and menu */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-    </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Return Home</a></li>
-            <li><a href="armories.html">Armories</a></li>
-            <!-- Dropdown for Armor Type -->
-            <li class="dropdown">
-                <a href="#">Armor Types</a>
-                <div class="dropdown-content">
-                    <a href="#" id="cloth">Cloth</a>
-                    <a href="#" id="leather">Leather</a>
-                    <a href="#" id="mail">Mail</a>
-                    <a href="#" id="plate">Plate</a>
-                </div>
-            </li>
+            <li><a href="index">Return Home</a></li>
+            <li><a href="armories">Armories</a></li>
         </ul>
     </nav>
 
     <header>
         <h1>Item Database</h1>
-        <p>Select an armor type to view available slots and items.</p>
+        <p>Choose a category to explore items!</p>
     </header>
 
-    <!-- Slot Sections for Each Armor Type -->
-    <div id="cloth-section" class="slot-section">
-        <h2>Cloth Armor</h2>
-        <h3>Helmet</h3>
-        <ul>
-            <li><a href="#">Cloth Helmet 1</a> - Additional info</li>
-            <li><a href="#">Cloth Helmet 2</a> - Additional info</li>
-        </ul>
-        <!-- Additional slots... -->
-    </div>
+<div class="selection-container">
+    <label for="armor-type">Select Armor Type or Item Type:</label>
+    <select id="armor-type" onchange="showSlots(this.value)">
+        <option value="">--Select--</option>
+        <option value="cloth">Cloth</option>
+        <option value="leather">Leather</option>
+        <option value="mail">Mail</option>
+        <option value="plate">Plate</option>
+        <!-- Non-multi-level options -->
+        <option value="cloak">Cloaks</option>
+        <option value="neck">Necks</option>
+        <option value="ring">Rings</option>
+        <option value="trinket">Trinkets</option>
+        <option value="2hmweapon">2H Melee Weapons</option>
+        <option value="1hmweapon">1H Melee Weapons</option>
+        <option value="2hcweapon">2H Caster Weapons</option>
+        <option value="1hcweapon">1H Caster Weapons</option>
+        <option value="ohweapon">OH</option>
+    </select>
+</div>
 
-    <div id="leather-section" class="slot-section">
-        <h2>Leather Armor</h2>
-        <h3>Helmet</h3>
-        <ul>
-            <li><a href="#">Leather Helmet 1</a> - Additional info</li>
-            <li><a href="#">Leather Helmet 2</a> - Additional info</li>
-        </ul>
-        <!-- Additional slots... -->
-    </div>
+<!-- Sections for armor types, will remain hidden by default -->
+<div id="cloth-section" class="slot-section">
+    <h2>Cloth Armor</h2>
+    <!-- Armor slots... -->
+</div>
+<div id="leather-section" class="slot-section">
+    <h2>Leather Armor</h2>
+    <!-- Armor slots... -->
+</div>
+<div id="mail-section" class="slot-section">
+    <h2>Mail Armor</h2>
+    <!-- Armor slots... -->
+</div>
+<div id="plate-section" class="slot-section">
+    <h2>Plate Armor</h2>
+    <!-- Armor slots... -->
+</div>
 
-    <div id="mail-section" class="slot-section">
-        <h2>Mail Armor</h2>
-        <h3>Helmet</h3>
-        <ul>
-            <li><a href="#">Mail Helmet 1</a> - Additional info</li>
-            <li><a href="#">Mail Helmet 2</a> - Additional info</li>
-        </ul>
-        <!-- Additional slots... -->
-    </div>
-
-    <div id="plate-section" class="slot-section">
-        <h2>Plate Armor</h2>
-        <h3>Helmet</h3>
-        <ul>
-            <li><a href="#">Plate Helmet 1</a> - Additional info</li>
-            <li><a href="#">Plate Helmet 2</a> - Additional info</li>
-        </ul>
-        <!-- Additional slots... -->
-    </div>
-
-    <script>
-        function showSlots(armorType) {
-            // Hide all sections first
-            const sections = document.querySelectorAll('.slot-section');
-            sections.forEach(section => section.style.display = 'none');
-            
-            // Show the selected section
-            const selectedSection = document.getElementById(armorType + '-section');
-            if (selectedSection) {
-                selectedSection.style.display = 'block';
-            }
-        }
-
-        // Assigning click events to the dropdown items
-        document.getElementById('cloth').addEventListener('click', function() {
-            showSlots('cloth');
-        });
-        document.getElementById('leather').addEventListener('click', function() {
-            showSlots('leather');
-        });
-        document.getElementById('mail').addEventListener('click', function() {
-            showSlots('mail');
-        });
-        document.getElementById('plate').addEventListener('click', function() {
-            showSlots('plate');
-        });
-    </script>
-</body>
-</html>
+<!-- Sections for non-multi-level items -->
+<div id="cloak-section" class="slot-section">
+    <h2>Cloaks</h2>
+    <ul>
+        <li><a href="#">Cloak 1</a> - Additional info</li>
+        <li><a href="#">Cloak 2</a> - Additional info</li>
+    </ul>
+</div>
+<div id="neck-section" class="slot-section">
+    <h2>Necks</h2>
+    <ul>
+        <li><a href="#">Neck 1</a> - Additional info</li>
+        <li><a href="#">Neck 2</a> - Additional info</li>
+    </ul>
+</div>
