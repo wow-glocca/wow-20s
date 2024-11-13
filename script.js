@@ -1,22 +1,32 @@
-function showSlots(selectedType) {
-    // Hide all sections initially
-    const allSections = document.querySelectorAll('.slot-section');
-    allSections.forEach(section => section.style.display = 'none');
+document.addEventListener('DOMContentLoaded', function () {
+    // Get the select element and all item sections
+    const categorySelect = document.getElementById('category-select');
+    const sections = document.querySelectorAll('.item-section');
 
-    // If no selection, do nothing
-    if (selectedType === "") {
-        return;
+    // Function to hide all sections
+    function hideAllSections() {
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
     }
 
-    // Show the selected section based on the dropdown value
-    const armorTypes = ['cloth', 'leather', 'mail', 'plate'];
-    if (armorTypes.includes(selectedType)) {
-        document.getElementById(selectedType + "-section").style.display = "block";
-    }
+    // Add an event listener for when the user selects a category
+    categorySelect.addEventListener('change', function() {
+        // Hide all sections before showing the selected one
+        hideAllSections();
+        
+        // Get the value of the selected category
+        const selectedCategory = categorySelect.value;
 
-    // Non-armor categories (Cloaks, Necks, Rings, etc.)
-    const nonArmorTypes = ['cloak', 'neck', 'ring', 'trinket', '2hmweapon', '1hmweapon', '2hcweapon', '1hcweapon', 'ohweapon'];
-    if (nonArmorTypes.includes(selectedType)) {
-        document.getElementById(selectedType + "-section").style.display = "block";
-    }
-}
+        // Show the section that matches the selected category
+        if (selectedCategory !== 'blank') {
+            const selectedSection = document.getElementById(`${selectedCategory}-section`);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+    });
+
+    // Initially hide all sections (optional, in case there's a default selection)
+    hideAllSections();
+});

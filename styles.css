@@ -1,3 +1,6 @@
+.item-section {
+    display: none;
+}
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
